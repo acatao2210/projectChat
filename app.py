@@ -17,8 +17,10 @@ def webhook():
 
   # Check for trigger
   if 'Joey' in data['text']:
-        msg = 'We dont need Baca, we just need 4 inches of cold rolled steel'
-        send_message(msg)
+      if data['name'] != 'Private Baca':
+        if data['name'] !="Sgt. Baca == American Hero":
+            msg = 'We dont need Joey, we just need 4 inches of cold rolled steel'
+            send_message(msg)
 
   return "ok", 200
 

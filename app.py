@@ -8,6 +8,7 @@ from urllib.request import Request, urlopen
 from flask import Flask, request
 
 app = Flask(__name__)
+bot_id = "ad73e79306e3ad1b3452a4a990"
 
 @app.route('/', methods=['POST'])
 def webhook():
@@ -15,7 +16,7 @@ def webhook():
   log('Recieved {}'.format(data))
 
   # Check for trigger
-  if data['text'] == 'Joey Baca':
+  if data['text'] == 'JoeyBaca':
     msg = 'Thank you Joey'
     send_message(msg)
 
@@ -25,7 +26,7 @@ def send_message(msg):
   url  = 'https://api.groupme.com/v3/bots/post'
 
   data = {
-          'bot_id' : os.getenv('ad73e79306e3ad1b3452a4a990'),
+          'bot_id' : bot_id,
           'text'   : msg,
          }
   request = Request(url, urlencode(data).encode())

@@ -15,21 +15,20 @@ def webhook():
   data = request.get_json()
   log('Recieved {}'.format(data))
 
-# Check for trigger
-if 'Joey' in data['text']:
-    if data['name'] != 'Private Baca':
+  # Check for trigger
+  if 'Joey' in data['text']:
+      if data['name'] != 'Private Baca':
         if data['name'] !="Sgt. Baca == American Hero":
-            msg = 'We dont need Joey, we just need 4 inches of cold rolled steel'
+            msg = 'We dont need Baca, we just need 4 inches of cold rolled steel'
             send_message(msg)
-
-
-elif 'We cant just let them attack the gate' in data['text']:
-    if data['name'] != 'Private Baca':
+  elif 'We cant just let them attack the gate' in data['text']:
+      if data['name'] != 'Private Baca':
         if data['name'] !="Sgt. Baca == American Hero":
             msg = 'The bars of those gates are 4 inches of colled rolled steel'
             send_message(msg)
 
   return "ok", 200
+
 
 def send_message(msg):
   url  = 'https://api.groupme.com/v3/bots/post'

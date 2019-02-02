@@ -8,7 +8,7 @@ from urllib.request import Request, urlopen
 from flask import Flask, request
 
 app = Flask(__name__)
-bot_id = "db59a366c4f2cbb461c3baae23	"
+bot_id = "db59a366c4f2cbb461c3baae23"
 
 @app.route('/', methods=['POST'])
 def webhook():
@@ -16,10 +16,10 @@ def webhook():
   log('Recieved {}'.format(data))
 
   # Check for trigger
-  if 'JoeyBaca' in data['text']:
+  if 'Joey' in data['text']:
       if data['name'] != 'Private Baca':
         if data['name'] !="Sgt. Baca == American Hero"
-            msg = 'Thank you Joey'
+            msg = 'We dont need Baca, we just need 4 inches of cold rolled steel'
             send_message(msg)
 
   return "ok", 200

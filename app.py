@@ -22,6 +22,13 @@ def webhook():
             msg = 'We dont need Joey, we just need 4 inches of cold rolled steel'
             send_message(msg)
 
+
+ if "We can't just let them attack the gate" in data['text']:
+     if data['name'] != 'Private Baca':
+       if data['name'] !="Sgt. Baca == American Hero":
+           msg = "The bars of those gates are 4 inches of colled rolled steel "
+           send_message(msg)
+
   return "ok", 200
 
 def send_message(msg):

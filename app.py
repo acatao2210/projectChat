@@ -16,7 +16,7 @@ def webhook():
   log('Recieved {}'.format(data))
 
   # Check for trigger
-  if data['text'] == 'JoeyBaca':
+  if 'Joey' in data['text']:
     msg = 'Thank you Joey'
     send_message(msg)
 

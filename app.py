@@ -14,9 +14,9 @@ def webhook():
   data = request.get_json()
   log('Recieved {}'.format(data))
 
-  # We don't want to reply to ourselves!
-  if data['name'] != 'Private Baca':
-    msg = '{}, you sent "{}".'.format(data['name'], data['text'])
+  # Check for trigger
+  if data['text'] == 'Joey Baca':
+    msg = 'Thank you Joey'
     send_message(msg)
 
   return "ok", 200
@@ -26,7 +26,7 @@ def send_message(msg):
 
   data = {
           'bot_id' : os.getenv('ad73e79306e3ad1b3452a4a990'),
-          'text'   : 'hi'msg,
+          'text'   : msg,
          }
   request = Request(url, urlencode(data).encode())
   json = urlopen(request).read().decode()

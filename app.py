@@ -26,7 +26,11 @@ def webhook():
         if data['name'] !="Sgt. Baca == American Hero":
             msg = 'The bars of those gates are 4 inches of colled rolled steel'
             send_message(msg)
-
+  elif 'THERE ARE GIANTS DOWN THERE' in data['text']:
+      if data['name'] != 'Private Baca':
+        if data['name'] !="Sgt. Baca == American Hero":
+            msg = 'We should have sealed the tunnel'
+            send_message(msg)
 
   return "ok", 200
 

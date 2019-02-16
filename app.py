@@ -64,7 +64,7 @@ def send_message_img(msg):
           'text'   : msg,
           "attachments": [
                 "type": "image",
-                "url": "https://i.imgur.com/r4YMlFc.gif"
+                "url": "https://i.groupme.com/540x283.gif.d0f91f43ecf94d1090f656c2a131d2b6.large"
                 ]
          }
   request = Request(url, urlencode(data).encode())

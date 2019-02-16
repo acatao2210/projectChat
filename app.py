@@ -34,7 +34,7 @@ def webhook():
   elif '!gasp' in data['text']:
       if data['name'] != 'Private Baca':
         if data['name'] !="Sgt. Baca == American Hero":
-            msg = 'gasp'
+            msg = ' '
             send_message_img(msg)
 
   return "ok", 200
@@ -62,7 +62,7 @@ def send_message_img(msg):
   data = {
           'bot_id' : bot_id,
           'text'   : msg,
-          "picture_url": "https://i.groupme.com/540x283.gif.d0f91f43ecf94d1090f656c2a131d2b6.large"
+          "picture_url": "https://i.groupme.com/540x283.gif.2412940a05a44378b4d92cc28f05c70f.large"
          }
   request = Request(url, urlencode(data).encode())
   json = urlopen(request).read().decode()

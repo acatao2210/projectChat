@@ -62,10 +62,7 @@ def send_message_img(msg):
   data = {
           'bot_id' : bot_id,
           'text'   : msg,
-          "attachments": [
-                "type": "image",
-                "url": "https://i.groupme.com/540x283.gif.d0f91f43ecf94d1090f656c2a131d2b6.large"
-                ]
+          "picture_url": "https://i.groupme.com/540x283.gif.d0f91f43ecf94d1090f656c2a131d2b6.large"
          }
   request = Request(url, urlencode(data).encode())
   json = urlopen(request).read().decode()
